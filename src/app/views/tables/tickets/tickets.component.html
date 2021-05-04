@@ -1,0 +1,41 @@
+<div class="row mt-5">
+    <div class="col-md-12">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true" class="mt-5">
+            <!--Card image-->
+            <div class="view gradient-card-header blue darken-2">
+                <h4 class="h4-responsive text-white">Tickets Totales </h4>
+            </div>
+            <!--/Card image-->
+            <!--Card content-->
+            <mdb-card-body>
+
+                <h3 class="mt-5 text-left"><strong>{{titulo}}</strong></h3>
+                <p>Aca se ven los tickets que se realizaron</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr >
+                            <th>#</th>
+                            <th>Titulo</th>
+                            <th>Asignado</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let tkt of tickets | keyvalue ">
+                        <tr *ngFor="let item of tkt.value | keyvalue ">
+                            <div [ngSwitch]="item.key">
+                                <td *ngSwitchCase="'NroPedido'">{{item.value}}1</td>
+                                <td *ngSwitchCase="'Titulo'">{{item.value}}</td>
+                                <td *ngSwitchCase="'Estado'">{{item.value}}</td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+</div>

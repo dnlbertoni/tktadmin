@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "192.168.5.86",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "intradesa",
+            "group": "work",
+            "database": "intranet",
+            "username": "intranet",
+            "password": "GE900Mhz"
+        }
+    ]
+}

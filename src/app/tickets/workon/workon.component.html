@@ -1,0 +1,82 @@
+<app-card-stats></app-card-stats>
+
+<div>&nbsp;</div>
+<div class="row">
+    <div class="col-md-12">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true">
+            <!--Card content-->
+            <mdb-card-body class="text-center">
+                <!--Title-->
+                <h5 class="card-title font-bold mb-2"><strong>Flujo de Trabajo</strong></h5>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Agente</th>
+                                <th>Backlog</th>
+                                <th>En Trabajo</th>
+                                <th>En Proveedores</th>
+                                <th>Finalizados</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let kan of kanban" style="font-size: 24px;">
+
+                                <td style="font-size: 16px; text-align:left;">{{kan.Agente}} </td>
+                                <td>
+                                    <a class="list-group-item list-group-item-action waves-effect">
+                                        <mdb-badge [style.background]="kan.backlog < 3 ? 'green' : 'red'" pill="true" class="pull-right">{{kan.backlog}} 
+                                        </mdb-badge>
+                                    </a>                                
+                                </td>
+                                <td >
+                                    <a class="list-group-item list-group-item-action waves-effect" >
+                                        <mdb-badge [style.background]="kan.todo < 4 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_todo_{{kan.idusuario}}">
+                                            {{kan.todo}}
+                                        </mdb-badge>
+                                    </a>                             
+                                </td>
+                                <td>
+                                    <a class="list-group-item list-group-item-action waves-effect" >
+                                        <mdb-badge [style.background]="kan.delivered > 1 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_del_{{kan.idusuario}}">
+                                            {{kan.delivered}}
+                                        </mdb-badge>
+                                    </a>    
+                                </td>
+                                <td>
+                                    <a  [routerLink]="['/tickets/agente', kan.idusuario , '25,20']" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"  >
+                                        <mdb-badge [style.background]="kan.fin > 1 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_fin_{{kan.idusuario}}">
+                                            &nbsp;{{kan.fin}}&nbsp;
+                                        </mdb-badge>
+                                    </a>   
+                                 </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="blue white-text">
+                                <td>Totales </td>
+                                <td>{{total[0]}} </td>
+                                <td>{{total[1]}} </td>
+                                <td>{{total[2]}} </td>
+                                <td>{{total[3]}} </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                <div class="text-right">
+                    <button type="button" mdbBtn outline="true" color="info" rounded="true" size="sm" mdbWavesEffect>
+                        More...
+                    </button>
+                </div>
+
+            </mdb-card-body>
+            <!--/.Card content-->
+
+        </mdb-card>
+        <!--/.Card-->
+        
+    </div>
+
+</div>
+
