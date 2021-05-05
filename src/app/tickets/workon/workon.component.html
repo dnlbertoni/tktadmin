@@ -25,27 +25,27 @@
 
                                 <td style="font-size: 16px; text-align:left;">{{kan.Agente}} </td>
                                 <td>
-                                    <a class="list-group-item list-group-item-action waves-effect">
+                                    <a [routerLink]="['/tickets/agente', kan.idusuario , '315,316,321',0,25]" routerLinkActive="active"  class="list-group-item list-group-item-action waves-effect">
                                         <mdb-badge [style.background]="kan.backlog < 3 ? 'green' : 'red'" pill="true" class="pull-right">{{kan.backlog}} 
                                         </mdb-badge>
                                     </a>                                
                                 </td>
                                 <td >
-                                    <a class="list-group-item list-group-item-action waves-effect" >
+                                    <a [routerLink]="['/tickets/agente', kan.idusuario , '19,21,274,280',0,25]" routerLinkActive="active"  class="list-group-item list-group-item-action waves-effect" >
                                         <mdb-badge [style.background]="kan.todo < 4 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_todo_{{kan.idusuario}}">
                                             {{kan.todo}}
                                         </mdb-badge>
                                     </a>                             
                                 </td>
                                 <td>
-                                    <a class="list-group-item list-group-item-action waves-effect" >
+                                    <a [routerLink]="['/tickets/agente', kan.idusuario , '313',0,25]" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect" >
                                         <mdb-badge [style.background]="kan.delivered > 1 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_del_{{kan.idusuario}}">
                                             {{kan.delivered}}
                                         </mdb-badge>
                                     </a>    
                                 </td>
                                 <td>
-                                    <a  [routerLink]="['/tickets/agente', kan.idusuario , '25,20']" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"  >
+                                    <a  [routerLink]="['/tickets/agente', kan.idusuario , '25,20',0,25]" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"  >
                                         <mdb-badge [style.background]="kan.fin > 1 ? 'green' : 'red'" pill="true" class="pull-right" id="lbl_fin_{{kan.idusuario}}">
                                             &nbsp;{{kan.fin}}&nbsp;
                                         </mdb-badge>

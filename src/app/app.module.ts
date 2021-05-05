@@ -44,7 +44,7 @@ const routes: Route[] = [
   },
   { path: 'tickets', children:
   [
-    { path: 'tickets/:ini/:fin', component: GestionComponent },
+    { path: 'tickets', component: GestionComponent },
     { path: 'agente/:agente/:estados/:ini/:fin', component: GestionComponent },
     { path: 'workon', component: WorkonComponent },
   ]

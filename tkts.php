@@ -9,7 +9,7 @@ $fechas=(isset($_GET['fechas']))?$_GET['fechas']:$fechoy->format('Y-m-d');
 $sector=(isset($_GET['sector']))?$_GET['sector']:false;
 $limit_ini=(isset($_GET['pag_ini']))?$_GET['pag_ini']:0;
 $limit_fin=(isset($_GET['pag_fin']))?$_GET['pag_fin']:25;
-$agente=(isset($_GET['agente'])&& trim($_GET['agente']) != '' )?' and s.idusuario = '. $_GET['agente'] .' ':' ';
+$agente=(isset($_GET['agente'])&& trim($_GET['agente']) != '' )?' and ( s.idusuario = '. $_GET['agente']. ' or s.idusuario_potencial = '. $_GET['agente'].' ) ':' ';
 $estados=(isset($_GET['estados']) && trim($_GET['estados']) != '')?' and s.idestado in (' .$_GET['estados'] .') ':'';
 $est_default = "
 AND (
